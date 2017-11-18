@@ -7,7 +7,7 @@ int yylex(void);
 %}
 
 %token INT SOMA EOL
-%left SOMA
+
 
 %%
 
