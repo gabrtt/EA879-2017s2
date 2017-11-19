@@ -51,6 +51,12 @@ imagem abrir_imagem(char *nome_do_arquivo) {
 
 }
 
+void liberar_imagem(imagem *I) {
+  free(I->r);
+  free(I->g);
+  free(I->b);
+}
+
 void salvar_imagem(char *nome_do_arquivo, imagem *I) {
   FIBITMAP *bitmapOut;
   RGBQUAD color;
@@ -73,4 +79,111 @@ void salvar_imagem(char *nome_do_arquivo, imagem *I) {
 
   FreeImage_Save(FIF_JPEG, bitmapOut, nome_do_arquivo, JPEG_DEFAULT);
 }
+
+
+/*Função que aplica o valor do brilho na imagem*/
+void brilho (imagem *I, float intensidade, char ope){
+   float x, y;
+  
+   /*Aqui, pegamos as matrizes das cores através de alocação dinâmica e definimos o # de colunas e # de linhas da imagem */
+   I->width = x;
+   I->height = y;
+printf("wid %f height %f", I->width, I->height);
+
+	printf("passei aqui\n");
+	printf("ope %c brilho %f \n", ope, intensidade);
+
+   if(ope == 'd'){
+
+for (int i=0; i<x; i++) 
+	{
+     
+     	for (int j=0; j<y; j++) 
+     	{
+            
+	      	int idx;
+
+	      	idx = i + (j*I->width);
+
+	      	/* para a parte vermelha do pixel */
+		if((I->r[idx] + intensidade) <= 255)
+	      	I->r[idx]	= (I->r[idx] + intensidade);
+		else
+		I->r[idx] = 255;
+
+	      	/* para a parte verde do pixel */
+		if((I->g[idx] + intensidade) <= 255)
+	      	I->g[idx] 	= (I->g[idx] + intensidade);
+		else
+		I->g[idx] = 255;
+
+	      	/* para a parte azul do pixel */
+		if((I->b[idx] + intensidade) <= 255)
+	      	I->b[idx] 	= (I->b[idx] + intensidade);
+		else		
+		I->b[idx] = 255;
+
+
+            }
+        }
+       
+    }
+
+   if(ope == '/'){
+printf("divisao\n");
+	   for (int i=0; i<I->width; i++) 
+	{
+     	for (int j=0; j<I->height; j++) 
+     	{
+	      	int idx;
+
+	      	idx = i + (j*I->width);
+
+	      	/* para a parte vermelha do pixel */
+		if((I->r[idx] + intensidade) <= 255)
+	      	I->r[idx]	= (I->r[idx] + intensidade);
+		else
+		I->r[idx] = 255;
+
+	      	/* para a parte verde do pixel */
+		if((I->g[idx] + intensidade) <= 255)
+	      	I->g[idx] 	= (I->g[idx] + intensidade);
+		else
+		I->g[idx] = 255;
+
+	      	/* para a parte azul do pixel */
+		if((I->b[idx] + intensidade) <= 255)
+	      	I->b[idx] 	= (I->b[idx] + intensidade);
+		else		
+		I->b[idx] = 255;
+	   }
+
+   }
+}
+}
+
+void busca (imagem I){
+   float x, y;
+   int i, j, max=0, soma;
+
+   I.width = x;
+   I.height = y;
+
+   for( j = 0; j < x*y; j++){
+	   soma = I.r[j] + I.g[j] + I.b[j];
+		if (soma > max){
+		   max = soma;
+		}
+   }
+return max;
+}
+
+
+
+
+
+
+
+
+
 

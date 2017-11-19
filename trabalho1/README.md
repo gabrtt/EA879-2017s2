@@ -74,7 +74,7 @@ deverá escrever na tela o valor máximo entre todos os valores dos pixels de
 Para este trabalho, deverão ser entregues:
 
 1. O código-fonte da linguagem implementada, num repositório Git do grupo
-1. Relatório (de **uma página, em coluna dupla, fontes Times New Roman 10**!),
+1. Relatório (trata-se de um texto **científico**, com **uma página, em coluna dupla, fontes Times New Roman 10**!),
 contendo:
   1. **Contextualização**, isto é, um breve texto introdutório explicando do que se
      trata o documento, em uma linguagem que poderia ser entendida por qualquer
@@ -90,7 +90,13 @@ contendo:
      grupo considere relevantes)
 
 
+# Datas importantes
 
+1. 12/setembro: nesta data, os trabalhos deverão estar concluídos. Importante:
+   levar na aula **uma cópia impressa do relatório para cada membro do grupo**,
+   pois neste dia faremos uma seção de revisão do texto.
+1. 19/setembro: data final para entrega do relatório revisado e do código-fonte
+   no Git, conforme as especificações neste texto.
 
 
 
